@@ -71,4 +71,21 @@ plt.close()
 cte=f(t60)[1]
 fig=plt.figure()
 cte1=plt.imshow(np.abs(cte[0]),extent=(30+dx,30-dx,30+dy,30-dy))
+#plt.colorbar()
+
+def ani(time):
+    cte1.set_array(abs(cte[time]))
+    return cte1
+Writer = animation.writers['ffmpeg']
+writer = Writer(fps=15,metadata=dict(artist='ROJAREDS'), bitrate=1800)
+
+movim=animation.FuncAnimation(fig,ani, np.arange(1,len(lista)), interval=20,blit=False)
+plt.title('Movimiento de la onda')
+color = plt.colorbar()
+color.ax.set_ylabel(r'[$\frac{AMPLITUD}',rotation=0)
+plt.ylabel('$x$')
+plt.xlabel('$y$')
+#plt.show()
+im_ani.save('Onda.mp4', write=write)
+             
    
