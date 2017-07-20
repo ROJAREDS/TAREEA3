@@ -24,3 +24,26 @@ def f(t):
     mascara=np.ones((302, 302))
     mascara[200,:]=np.zeros((1,302))
     mascara[200,140:170]=np.ones((1,30))
+#plt.imshow(mascara)
+#plt.show()
+    k=(2.0*dt*(c**2.0))/dx
+#primera derivada
+    for i in range(1,299):
+        for j in range(1,299):
+            momento2[i,j]=k*((inicio[i+1,j])-(inicio[i-1,j]))+k*((inicio[i,j+1])-inicio[i,j-1])
+        #print momento1
+    momento3=inicio.copy()
+    momento1=momento2.copy()*mascara
+    lista.append(momento1)
+
+    s=((c**2)*(dt**2))/(dx**2)
+    for i in range (1,t):
+        for j in range(1,299):
+            for l in range(1,299):
+                momento2[j,l]=s*((momento1[j+1,l])-(2*momento1[j,l])+(momento1[j-1,l]))+s*(momento1[j,l+1]-2*(momento1[j,l])+momento1[j,l-1])+(2*momento1[j,l])-momento3[j,l]
+        momento3=momento1.copy()
+        momento1=momento2.copy()*mascara
+        lista.append(momento1)
+        
+    return momento1, lista
+   
