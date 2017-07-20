@@ -46,4 +46,29 @@ def f(t):
         lista.append(momento1)
         
     return momento1, lista
+t60=1200
+t30=600
+#print f(t60)
+
+plt.imshow(f(t60)[0])
+plt.title('Onda en 60s')
+color = plt.colorbar()
+color.ax.set_ylabel(r'[$\frac{AMPLITUD}',rotation=0)
+plt.ylabel('$x$')
+plt.xlabel('$y$')
+plt.savefig('ondaen60.png')
+plt.close()
+
+plt.imshow(f(t30)[0],cmap="hot")
+plt.title('Onda en 30s')
+color = plt.colorbar()
+color.ax.set_ylabel(r'[$\frac{AMPLITUD}',rotation=0)
+plt.ylabel('$x$')
+plt.xlabel('$y$')
+plt.savefig("ondaen20.png")
+plt.close()
+
+cte=f(t60)[1]
+fig=plt.figure()
+cte1=plt.imshow(np.abs(cte[0]),extent=(30+dx,30-dx,30+dy,30-dy))
    
