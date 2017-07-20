@@ -106,6 +106,7 @@ void cini(double vx[10][1000], double vy[10][1000], double vz[10][1000], double 
         
     }   
 }
+// los datos obtenidos por este metodo generan triangulos al graficarlos, pareciera que evolucion de los datos es lineal.No es posible realizar cambios el tiempo no alcanza
 void gene(double vx[10][1000], double vy[10][1000], double vz[10][1000], double x[10][1000],  double y[10][1000],  double z[10][1000], double m[10][1000], int tiempo){
     double dt=0.1;
     int i=0;
