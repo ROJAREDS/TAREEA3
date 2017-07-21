@@ -1,0 +1,48 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Metodos computacionales - Tarea 3}
+\author{Julio Cesar Rojas - 201225248}
+
+\begin{document}
+\maketitle
+\begin{figure}
+\section{Ecuacion de onda en 2 dimenciones}
+Las graficas mostradas a continuacion muestran una foto en un instante de tiempo determinado. Para la figura 1 se tienen la imagen en 60 segundos mostrando la reflexion de las indas con su respectiva amplitud. Por otro lado la figura 2 muestra una foto tomada en t = 30 segundo
+
+\centering
+\includegraphics[width=0.5\textwidth]{ondaen60.png}
+\caption{\label{fig:60}Propagacion de onda en t=60.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{ondaen20.png}
+\caption{\label{fig:30}Propagacion de onda en t=30.}
+\end{figure}
+
+
+\begin{figure}
+\section{Sistema Solar}
+En la grafica siguiente se observaran las orbitas para cada uno de los planetas, calculdas por el metodo de Leap Frog, sin embargo,al utilizar los datos calculados es evidente que en alguna parte de la implementacion primaria,por ende, las graficas se muestran de tal forma que se asemeja a un comportamiento lineal.
+\centering
+\includegraphics[width=1.0\textwidth]{orbit.png}
+\caption{\label{fig:Orbitas}Orbitas de los planetas del sistema solar.}
+\end{figure}
+
+
+
+\end{document}
